@@ -7,6 +7,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+
+import static org.testng.Assert.assertEquals;
+
 public class TestClass {
 
     private RemoteWebDriver driver;
@@ -26,17 +29,19 @@ public class TestClass {
     }
 
     @Test
-    public void googleSearchDotaTest() {
+    public void googleSearchOverwatchTest() {
         driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys(("D.Va!"));
+        driver.findElement(By.name("q")).sendKeys(("D.Va"));
         driver.findElement(By.name("btnG")).click();
+        assertEquals(driver.findElement(By.xpath(".//*[@class='_Q1n']/div[1]")).getText(), "D.Va");
     }
 
     @Test
-    public void googleSearchOverwatchTest() {
+    public void googleSearchDotaTest() {
         driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys(("Dota2!"));
+        driver.findElement(By.name("q")).sendKeys(("Dota 2"));
         driver.findElement(By.name("btnG")).click();
+        assertEquals(driver.findElement(By.xpath(".//*[@class='_Q1n']/div[1]")).getText(), "Dota 2");
     }
 
     @AfterTest
