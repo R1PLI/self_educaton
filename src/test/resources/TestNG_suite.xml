@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="2">
+<suite name="Suite" parallel="tests" thread-count="4">
     <parameter name="remoteURL" value="http://localhost:4444/wd/hub"/>
     <test name="ParallelChrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="TestClass"/>
+            <class name="TestClass">
+                <methods>
+                    <include name="googleSearchDotaTest"/>
+                    <include name="googleSearchOverwatchTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <parameter name="remoteURL" value="http://localhost:4444/wd/hub"/>
     <test name="ParallelFirefox">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="TestClass"/>
+            <class name="TestClass">
+                <methods>
+                    <include name="googleSearchDotaTest"/>
+                    <include name="googleSearchOverwatchTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -14,20 +14,15 @@ public class TestClass {
     @BeforeTest
     @Parameters({"browser", "remoteURL"})
     public void setUp(String browser, String remoteURL) throws MalformedURLException {
-        if(browser.equals("firefox")){
+        if (browser.equals("firefox")) {
             driver = new RemoteWebDriver(new URL(remoteURL), DesiredCapabilities.firefox());
-        } else {
+        } else if (browser.equals("chrome")) {
             driver = new RemoteWebDriver(new URL(remoteURL), DesiredCapabilities.chrome());
         }
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
-    }
-
-    @AfterTest
-    public void tearDown() {
-        //driver.close();
     }
 
     @Test
@@ -42,5 +37,10 @@ public class TestClass {
         driver.get("http://www.google.com");
         driver.findElement(By.name("q")).sendKeys(("Dota2!"));
         driver.findElement(By.name("btnG")).click();
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
     }
 }
