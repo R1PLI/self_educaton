@@ -5,7 +5,7 @@
     <test name="ParallelChrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="TestClass">
+            <class name="grid_test.TestClass">
                 <methods>
                     <include name="googleSearchDotaTest"/>
                     <include name="googleSearchOverwatchTest"/>
@@ -17,7 +17,7 @@
     <test name="ParallelFirefox">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="TestClass">
+            <class name="grid_test.TestClass">
                 <methods>
                     <include name="googleSearchDotaTest"/>
                     <include name="googleSearchOverwatchTest"/>

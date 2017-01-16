@@ -1,18 +1,18 @@
-import org.openqa.selenium.By;
+package grid_test;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+abstract public class BaseTest {
 
-import static org.testng.Assert.assertEquals;
-
-public class TestClass {
-
-    private RemoteWebDriver driver;
+    protected static RemoteWebDriver driver;
 
     @BeforeTest
     @Parameters({"browser", "remoteURL"})
@@ -26,22 +26,6 @@ public class TestClass {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
-    }
-
-    @Test
-    public void googleSearchOverwatchTest() {
-        driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys(("D.Va"));
-        driver.findElement(By.name("btnG")).click();
-        assertEquals(driver.findElement(By.xpath(".//*[@class='_Q1n']/div[1]")).getText(), "D.Va");
-    }
-
-    @Test
-    public void googleSearchDotaTest() {
-        driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys(("Dota 2"));
-        driver.findElement(By.name("btnG")).click();
-        assertEquals(driver.findElement(By.xpath(".//*[@class='_Q1n']/div[1]")).getText(), "Dota 2");
     }
 
     @AfterTest
