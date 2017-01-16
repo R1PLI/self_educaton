@@ -2,9 +2,7 @@ package grid_test;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,10 +20,11 @@ abstract public class BaseTest {
         } else if (browser.equals("chrome")) {
             driver = new RemoteWebDriver(new URL(remoteURL), DesiredCapabilities.chrome());
         }
-
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+        driver.get("https://www.google.co.uk/");
     }
 
     @AfterTest
