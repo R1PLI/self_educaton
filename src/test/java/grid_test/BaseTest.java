@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 abstract public class BaseTest {
 
+    protected static final String GOOGLE_MAIN_PAGE = "https://www.google.co.uk/";
     protected static RemoteWebDriver driver;
 
     @BeforeTest
@@ -24,11 +25,15 @@ abstract public class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
-        driver.get("https://www.google.co.uk/");
+        driver.get(GOOGLE_MAIN_PAGE);
     }
 
     @AfterTest
     public void tearDown() {
-        driver.quit();
+        try {
+            driver.quit();
+        } catch (Exception e) {
+            driver.quit();
+        }
     }
 }
