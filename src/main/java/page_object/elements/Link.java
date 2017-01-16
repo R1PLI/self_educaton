@@ -2,10 +2,10 @@ package page_object.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import page_object.core.baseelement.CustomWebElement;
 import page_object.core.baseelement.IClickedWebElement;
-import page_object.core.baseelement.WeebElement;
 
-public class Link extends WeebElement implements IClickedWebElement {
+public class Link extends CustomWebElement implements IClickedWebElement {
     public Link(WebDriver webDriver, By by) {
         super(webDriver, by);
     }

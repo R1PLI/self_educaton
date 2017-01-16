@@ -6,7 +6,6 @@ import page_object.core.driver.Driver;
 import page_object.elements.Link;
 
 
-
 public class MessagePage extends BasePage {
 
     private static Link messageLink;

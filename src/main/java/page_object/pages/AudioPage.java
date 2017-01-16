@@ -7,13 +7,14 @@ import page_object.elements.Link;
 
 public class AudioPage extends BasePage {
 
+    private static final String AUDIO_PAGE_LABEL_XPATH = "//*[@id=\"ui_rmenu_audio_album_405355403_-2\"]/span";
     private static Link myMusicLink;
 
     public AudioPage() {
-        myMusicLink = new Link(Driver.getInstance(), By.xpath("//*[@id=\"ui_rmenu_audio_album_405355403_-2\"]/span"));
+        myMusicLink = new Link(Driver.getInstance(), By.xpath(AUDIO_PAGE_LABEL_XPATH));
     }
 
-    public static String getAudioPageMusic() {
+    public static String getAudioPageMusicLabel() {
         return myMusicLink.getText();
     }
 

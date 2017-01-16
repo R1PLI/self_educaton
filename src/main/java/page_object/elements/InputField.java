@@ -2,9 +2,9 @@ package page_object.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import page_object.core.baseelement.WeebElement;
+import page_object.core.baseelement.CustomWebElement;
 
-public class InputField extends WeebElement {
+public class InputField extends CustomWebElement {
     public InputField(WebDriver webDriver, By by) {
         super(webDriver, by);
     }

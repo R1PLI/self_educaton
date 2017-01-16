@@ -13,6 +13,8 @@ public class Driver {
         if (driver == null) {
             driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
             return driver;
         } else {
             return driver;
@@ -20,7 +22,9 @@ public class Driver {
     }
 
     public static void close() {
-        driver.close();
-        driver = null;
+        if(driver != null) {
+            driver.close();
+            driver = null;
+        }
     }
 }
