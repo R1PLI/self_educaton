@@ -23,15 +23,8 @@ public class ResultPage extends BasePage {
     }
 
     private void explicitWait(WebDriver driver) {
-        (new WebDriverWait(driver, 2)).until(ExpectedConditions.elementToBeClickable(searchedLink));
+        (new WebDriverWait(driver, 3)).until(ExpectedConditions.elementToBeClickable(searchedLink));
     }
-
-    /*private void customWaiter() {
-        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(Driver.getInstance());
-        wait.pollingEvery(250, TimeUnit.MILLISECONDS);
-        wait.withTimeout(2, TimeUnit.SECONDS);
-        wait.until(function);
-    }*/
 
     public ResultPage searchButtonClick() {
         searchButton.click();
