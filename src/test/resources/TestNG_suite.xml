@@ -3,23 +3,8 @@
 <suite name="Suite" parallel="tests" thread-count="2">
     <parameter name="remoteURL" value="http://localhost:4444/wd/hub"/>
     <test name="ParallelChrome">
-        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="grid_test.TestClass">
-                <methods>
-                    <include name="googleSearchOverwatchTest"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <parameter name="remoteURL" value="http://localhost:4444/wd/hub"/>
-    <test name="ParallelFirefox">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="grid_test.TestClass">
-                <methods>
-                    <include name="googleSearchOverwatchTest"/>
-                </methods>
             </class>
         </classes>
     </test>
