@@ -108,7 +108,6 @@
                 <systemPropertyVariables>
                     <webdriver.chrome.driver>src\\main\\resources\\drivers\\chromedriver.exe</webdriver.chrome.driver>
                 </systemPropertyVariables>
-                <skip>true</skip>
             </configuration>
         </plugin>
         <plugin>
