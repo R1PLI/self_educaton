@@ -17,6 +17,8 @@ public class Driver {
         if (webDriver == null) {
             webDriver = new ChromeDriver();
             webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            webDriver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+            webDriver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
             return webDriver;
         } else {
             return webDriver;
