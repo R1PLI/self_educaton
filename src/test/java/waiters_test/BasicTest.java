@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import waiters.pages.SearchPage;
 
 import static waiters.pages.WebDriverPage.getTitleText;
+import static org.assertj.core.api.Assertions.*;
 
 public class BasicTest extends BaseTest{
 

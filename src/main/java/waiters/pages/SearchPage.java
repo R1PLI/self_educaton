@@ -23,4 +23,5 @@ public class SearchPage extends BasePage {
         inputSearchRequest(query);
         return new ResultPage();
     }
+
 }
