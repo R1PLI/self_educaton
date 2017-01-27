@@ -16,7 +16,7 @@ public abstract class BaseTest {
         try{
             Driver.driverKill();
         } catch (Exception e) {
-            Driver.driverKill();
+            System.out.println(e.getMessage());
         }
 
     }
