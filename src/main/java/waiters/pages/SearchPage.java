@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import waiters.core.page.BasePage;
 
+import static org.testng.Assert.assertTrue;
+
 
 public class SearchPage extends BasePage {
 
@@ -12,6 +14,7 @@ public class SearchPage extends BasePage {
 
     public SearchPage() {
         super();
+        assertTrue(searchField.isDisplayed());
     }
 
     private SearchPage inputSearchRequest(String query) {

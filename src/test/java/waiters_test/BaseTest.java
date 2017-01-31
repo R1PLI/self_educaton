@@ -16,6 +16,7 @@ public abstract class BaseTest {
     @AfterMethod
     public void tearDown() {
         try {
+            Driver.clearCookie();
             Driver.driverKill();
         } catch (Exception e) {
             System.out.println(e.getMessage());

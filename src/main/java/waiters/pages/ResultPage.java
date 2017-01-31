@@ -8,10 +8,12 @@ import waiters.core.page.BasePage;
 
 import java.util.List;
 
+import static org.testng.Assert.assertTrue;
+
 
 public class ResultPage extends BasePage {
 
-    @FindAll({@FindBy(xpath = ".//*[@class='_NId']/*[@class='srg']/div/div/h3/a")})
+    @FindAll({@FindBy(xpath = ".//div/div/h3/a")})
     public List<WebElement> resultLinks;
 
     @FindBy(name = "btnG")
@@ -19,6 +21,7 @@ public class ResultPage extends BasePage {
 
     public ResultPage() {
         super();
+        assertTrue(searchButton.isDisplayed());
     }
 
     public ResultPage searchButtonClick() {
@@ -26,8 +29,13 @@ public class ResultPage extends BasePage {
         return this;
     }
 
-    public WebDriverPage linkClick() {
-        resultLinks.get(0).click();
+    public WebDriverPage webDriverLinkClick(int linkIndex) {
+        resultLinks.get(linkIndex).click();
         return new WebDriverPage();
+    }
+
+    public OverwatchPage overwatchLinkClick(int linkIndex) {
+        resultLinks.get(linkIndex).click();
+        return new OverwatchPage();
     }
 }

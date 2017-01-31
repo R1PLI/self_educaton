@@ -31,4 +31,10 @@ public class Driver {
             webDriver = null;
         }
     }
+
+    public static void clearCookie() {
+        if(webDriver != null) {
+            webDriver.manage().deleteAllCookies();
+        }
+    }
 }
