@@ -38,4 +38,9 @@ public class ResultPage extends BasePage {
         resultLinks.get(linkIndex).click();
         return new OverwatchPage();
     }
+
+    public SearchedPage searchedPageClick(int linkIndex) {
+        resultLinks.get(linkIndex).click();
+        return new SearchedPage();
+    }
 }
