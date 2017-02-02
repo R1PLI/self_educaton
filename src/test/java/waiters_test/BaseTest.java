@@ -1,19 +1,22 @@
 package waiters_test;
 
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import waiters.core.driver.Driver;
 
+import static waiters.constants.ApplicationConstants.GOOGLE_COM;
+
 public abstract class BaseTest {
-    @BeforeTest
+
+    @BeforeMethod
     public void setUp() {
-        Driver.getInstance().get("http://google.co.uk");
+        Driver.getInstance().get(GOOGLE_COM);
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
-        try{
+        try {
+            Driver.clearCookie();
             Driver.driverKill();
         } catch (Exception e) {
             System.out.println(e.getMessage());

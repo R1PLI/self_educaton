@@ -1,20 +1,21 @@
 package waiters_test;
 
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import waiters.pages.SearchPage;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static waiters.constants.ApplicationConstants.*;
 import static waiters.pages.WebDriverPage.getTitleText;
 
-public class BasicTest extends BaseTest{
+public class BasicTest extends BaseTest {
 
     @Test
-    public void googleSearchTest() {
+    public void googleWebDriverSearchTest() {
         new SearchPage()
-                .searchRequest("Webdriver")
+                .searchRequest(WEB_DRIVER_SEARCH_QUERY)
                 .searchButtonClick()
-                .linkClick("Selenium WebDriver — Selenium Documentation");
-        Assert.assertEquals(getTitleText(), "Selenium WebDriver");
+                .webDriverLinkClick(SECOND_LINK);
+        assertThat(getTitleText().equalsIgnoreCase(SELENIUM_WEB_DRIVER_TITLE_TEXT));
     }
 }
