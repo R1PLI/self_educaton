@@ -15,7 +15,6 @@ public class WebDriverPage extends BasePage {
 
     public WebDriverPage() {
         super();
-        assertTrue(titleText.isDisplayed());
     }
 
     public static String getTitleText() {

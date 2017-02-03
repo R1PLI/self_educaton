@@ -14,7 +14,6 @@ public class SearchPage extends BasePage {
 
     public SearchPage() {
         super();
-        assertTrue(searchField.isDisplayed());
     }
 
     private SearchPage inputSearchRequest(String query) {

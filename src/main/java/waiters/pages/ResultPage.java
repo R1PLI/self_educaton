@@ -21,12 +21,15 @@ public class ResultPage extends BasePage {
 
     public ResultPage() {
         super();
-        assertTrue(searchButton.isDisplayed());
     }
 
     public ResultPage searchButtonClick() {
         searchButton.click();
         return this;
+    }
+
+    public List<WebElement> getLinksText() {
+        return resultLinks;
     }
 
     public WebDriverPage webDriverLinkClick(int linkIndex) {
