@@ -5,7 +5,9 @@ import org.testng.annotations.Test;
 import waiters.pages.SearchPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static waiters.constants.ApplicationConstants.*;
+import static waiters.constants.assertion.AssertConstants.SELENIUM_WEB_DRIVER_TITLE_TEXT;
+import static waiters.constants.test.TestConstants.SECOND_LINK;
+import static waiters.constants.test.TestConstants.WEB_DRIVER_SEARCH_QUERY;
 import static waiters.pages.WebDriverPage.getTitleText;
 
 public class BasicTest extends BaseTest {

@@ -4,7 +4,9 @@ import org.testng.annotations.Test;
 import waiters.pages.SearchPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static waiters.constants.ApplicationConstants.*;
+import static waiters.constants.assertion.AssertConstants.OVERWATCH_SITE_URL;
+import static waiters.constants.test.TestConstants.FIRST_LINK;
+import static waiters.constants.test.TestConstants.OVERWATCH_SEARCH_QUERY;
 import static waiters.pages.OverwatchPage.getUrlText;
 
 

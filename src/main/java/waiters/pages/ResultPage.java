@@ -14,7 +14,7 @@ import static org.testng.Assert.assertTrue;
 public class ResultPage extends BasePage {
 
     @FindAll({@FindBy(xpath = ".//div/div/h3/a")})
-    public List<WebElement> resultLinks;
+    private static List<WebElement> resultLinks;
 
     @FindBy(name = "btnG")
     private WebElement searchButton;
@@ -28,7 +28,7 @@ public class ResultPage extends BasePage {
         return this;
     }
 
-    public List<WebElement> getLinksText() {
+    public static List<WebElement> getLinksText() {
         return resultLinks;
     }
 

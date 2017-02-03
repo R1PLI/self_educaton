@@ -1,10 +1,11 @@
 package waiters_test;
 
 
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import waiters.core.driver.Driver;
 
-import static waiters.constants.ApplicationConstants.GOOGLE_COM;
+import static waiters.constants.url.UrlConstants.GOOGLE_COM;
 
 public abstract class BaseTest {
 
