@@ -12,7 +12,7 @@ import static waiters.pages.OverwatchPage.getUrlText;
 
 public class BasicTest2 extends BaseTest {
 
-    @Test
+    @Test(enabled = true)
     public void googleOverwatchSearchTest() {
         new SearchPage()
                 .searchRequest(OVERWATCH_SEARCH_QUERY)

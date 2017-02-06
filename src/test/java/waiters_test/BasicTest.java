@@ -12,7 +12,7 @@ import static waiters.pages.WebDriverPage.getTitleText;
 
 public class BasicTest extends BaseTest {
 
-    @Test
+    @Test(enabled = true)
     public void googleWebDriverSearchTest() {
         new SearchPage()
                 .searchRequest(WEB_DRIVER_SEARCH_QUERY)
