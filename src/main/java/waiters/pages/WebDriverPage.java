@@ -22,8 +22,9 @@ public class WebDriverPage extends BasePage {
 
     public static String getTitleText() {
         Condition.getInstance().waitForElementHasText(titleText, TITLE_TEXT);
-/*        WebElement element = waitFor(visibilityOf(titleText), 10);
-        element.getText();*/
         return titleText.getText();
+
+        /*WebElement titleTextElement = waitFor(visibilityOf(titleText), 10);
+        return titleTextElement.getText();*/
     }
 }
