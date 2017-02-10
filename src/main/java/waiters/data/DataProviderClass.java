@@ -14,7 +14,7 @@ public class DataProviderClass {
     public static Object[][] query() {
         return new Object[][]{  {YOUTUBE_SEARCH_QUERY, FIRST_LINK, YOUTUBE_LINK_VERIFYING, YOUTUBE_URL},
                                 {STEAM_SEARCH_QUERY, FIRST_LINK, STEAM_LINK_VERIFYING, STEAM_URL},
-                                {DOTA2_SEARCH_QUERY, FIRST_LINK, DOTA2_LINK_VERIFYING, DOTA2_URL}
+                                {FACEBOOK_SEARCH_QUERY, FIRST_LINK, FACEBOOK_LINK_VERIFYING, FACEBOOK_URL}
         };
     }
 }

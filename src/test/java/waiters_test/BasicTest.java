@@ -2,7 +2,7 @@ package waiters_test;
 
 
 import org.testng.annotations.Test;
-import waiters.pages.SearchPage;
+import waiters.pages.HomePage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static waiters.constants.assertion.AssertConstants.SELENIUM_WEB_DRIVER_TITLE_TEXT;
@@ -14,7 +14,7 @@ public class BasicTest extends BaseTest {
 
     @Test(enabled = true)
     public void googleWebDriverSearchTest() {
-        new SearchPage()
+        new HomePage()
                 .searchRequest(WEB_DRIVER_SEARCH_QUERY)
                 .searchButtonClick()
                 .webDriverLinkClick(SECOND_LINK);

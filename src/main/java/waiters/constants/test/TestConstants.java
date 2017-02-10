@@ -5,7 +5,7 @@ public class TestConstants {
     public static final String OVERWATCH_SEARCH_QUERY = "Overwatch";
     public static final String YOUTUBE_SEARCH_QUERY = "youtube";
     public static final String STEAM_SEARCH_QUERY = "steam";
-    public static final String DOTA2_SEARCH_QUERY = "dota2.ru";
+    public static final String FACEBOOK_SEARCH_QUERY = "facebook";
     public static final int FIRST_LINK = 0;
     public static final int SECOND_LINK = 1;
     public static final int THIRD_LINK = 2;

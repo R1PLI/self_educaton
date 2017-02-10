@@ -1,7 +1,7 @@
 package waiters_test;
 
 import org.testng.annotations.Test;
-import waiters.pages.SearchPage;
+import waiters.pages.HomePage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static waiters.constants.assertion.AssertConstants.OVERWATCH_SITE_URL;
@@ -14,7 +14,7 @@ public class BasicTest2 extends BaseTest {
 
     @Test(enabled = true)
     public void googleOverwatchSearchTest() {
-        new SearchPage()
+        new HomePage()
                 .searchRequest(OVERWATCH_SEARCH_QUERY)
                 .searchButtonClick()
                 .overwatchLinkClick(FIRST_LINK);

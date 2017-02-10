@@ -13,7 +13,7 @@
     </test>
     <test name="Test3">
         <classes>
-            <class name="waiters_test.BasicTest3"/>
+            <class name="waiters_test.BasicGoogleTest"/>
         </classes>
     </test>
 </suite>

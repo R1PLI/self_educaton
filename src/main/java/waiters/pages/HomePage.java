@@ -7,16 +7,16 @@ import waiters.core.page.BasePage;
 import static org.testng.Assert.assertTrue;
 
 
-public class SearchPage extends BasePage {
+public class HomePage extends BasePage {
 
     @FindBy(name = "q")
     private WebElement searchField;
 
-    public SearchPage() {
+    public HomePage() {
         super();
     }
 
-    private SearchPage inputSearchRequest(String query) {
+    private HomePage inputSearchRequest(String query) {
         searchField.sendKeys(query);
         return this;
     }

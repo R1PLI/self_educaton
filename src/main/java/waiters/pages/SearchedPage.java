@@ -9,7 +9,7 @@ public class SearchedPage extends BasePage {
         super();
     }
 
-    public static String getPageTitle() {
+    public String getPageTitle() {
         return Driver.getInstance().getTitle();
     }
 }
