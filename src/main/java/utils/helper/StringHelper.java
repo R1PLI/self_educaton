@@ -2,7 +2,7 @@ package utils.helper;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import org.apache.commons.lang3.StringUtils;
 import java.util.*;
 
 
@@ -23,7 +23,6 @@ public class StringHelper {
      */
     public static void main(String[] args) {
 
-
         //Delimiters
         String charDelimiterComa = ",";
 
@@ -37,6 +36,8 @@ public class StringHelper {
         String palindromeString = "abba abba d abba badda tytytyty";
         String searchingWord = "abba";
         String containsWord = "fork";
+        String myEmail = "Oleksandr_Pochernin@epam.com";
+        String RegExEmail = "([\\w-\\.]+)@((?:[\\w]+\\.)+)(\\w{2,4})";
 
         //Arrays
         Integer[] intArray = {1, 2, 3, 4, 5};
@@ -66,6 +67,8 @@ public class StringHelper {
         logger.info(subStringWithVariousLength(testString, startIndex, endIndex));
         //String contains the word
         logger.info(isStringContainsWord(testString, containsWord));
+        //String matches RegEx
+        logger.info(isStringMatchesToRegEx(myEmail,RegExEmail));
     }
 
     /**
