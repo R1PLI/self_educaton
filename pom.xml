@@ -93,15 +93,16 @@
         <version>RELEASE</version>
     </dependency>
     <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>RELEASE</version>
-    </dependency>
-    <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
         <version>3.0.1</version>
     </dependency>
+    <dependency>
+        <groupId>com.codeborne</groupId>
+        <artifactId>selenide</artifactId>
+        <version>4.3</version>
+    </dependency>
+
 
 </dependencies>
 <build>
@@ -113,6 +114,7 @@
             <configuration>
                 <systemPropertyVariables>
                     <webdriver.chrome.driver>drivers\\chromedriver.exe</webdriver.chrome.driver>
+                    <browser>chrome</browser>
                 </systemPropertyVariables>
                 <skip>true</skip>
             </configuration>
