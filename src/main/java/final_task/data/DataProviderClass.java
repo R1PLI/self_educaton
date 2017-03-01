@@ -10,11 +10,11 @@ public class DataProviderClass {
 
     }
 
-    /*@DataProvider(name = "GoogleSearch")
+    @DataProvider(name = "GmailMailing")
     public static Object[][] query() {
-        return new Object[][]{  {YOUTUBE_SEARCH_QUERY, FIRST_LINK, YOUTUBE_LINK_VERIFYING, YOUTUBE_URL},
-                                {STEAM_SEARCH_QUERY, FIRST_LINK, STEAM_LINK_VERIFYING, STEAM_URL},
-                                {FACEBOOK_SEARCH_QUERY, FIRST_LINK, FACEBOOK_LINK_VERIFYING, FACEBOOK_URL}
+        return new Object[][]{
+                {GMAIL_LOGIN_EMAIL, GMAIL_LOGIN_PWD, GMAIL_TO_EMAIL, GMAIL_MESSAGE_SUBJECT, GMAIL_MESSAGE_TEXT, GMAIL_MESSAGE_SUBJECT}
+
         };
-    }*/
+    }
 }

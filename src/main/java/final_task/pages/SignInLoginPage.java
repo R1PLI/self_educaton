@@ -9,9 +9,6 @@ public class SignInLoginPage extends BasePage {
     @FindBy(css = "input#Email")
     private WebElement emailLoginField;
 
-    /*@FindBy(css = "input#Passwd")
-    private WebElement passwordLoginField;*/
-
     @FindBy(name = "signIn")
     private WebElement loginNExtButton;
 
@@ -24,18 +21,8 @@ public class SignInLoginPage extends BasePage {
         return this;
     }
 
-    /*public SignInLoginPage sendInputPassword(String pwd) {
-        emailLoginField.sendKeys(pwd);
-        return this;
-    }*/
-
-    public SignInPwdPage emailLoginButtonClick() throws InterruptedException {
+    public SignInPwdPage emailLoginButtonClick() {
         loginNExtButton.click();
         return new SignInPwdPage();
     }
-
-  /*  public InboxPage mailBoxButtonClick() {
-        loginNExtButton.click();
-        return new InboxPage();
-    }*/
 }

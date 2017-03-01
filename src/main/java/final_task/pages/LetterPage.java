@@ -40,5 +40,4 @@ public class LetterPage extends BasePage {
         sendMessageButton.click();
         return new InboxPage();
     }
-
 }
