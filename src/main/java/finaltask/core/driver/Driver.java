@@ -1,4 +1,4 @@
-package final_task.core.driver;
+package finaltask.core.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
     private static WebDriver webDriver;
-    private static ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<>();
 
     private Driver() {
 

@@ -1,32 +1,32 @@
-package final_task.pages;
+package finaltask.pages;
 
-import final_task.core.page.BasePage;
+import finaltask.core.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class InboxPage extends BasePage{
+public class InboxPage extends BasePage {
 
     @FindBy(className = "aic")
-    private static WebElement writeLetterButton;
+    private WebElement writeLetterButton;
 
     @FindBy(xpath = ".//*[@class='nU n1']/a")
-    private static WebElement newMessageLink;
+    private WebElement newMessageLink;
 
     @FindAll({@FindBy(className = "bog")})
-    private static List<WebElement> messageSubjectText;
+    private List<WebElement> messageSubjectText;
 
     public InboxPage() {
         super();
     }
 
-    public static WebElement getWriteLetterButton() {
+    public WebElement getWriteLetterButton() {
         return writeLetterButton;
     }
 
-    public static List<WebElement> getMessageSubjectField() {
+    public List<WebElement> getMessageSubjectField() {
         return messageSubjectText;
     }
 

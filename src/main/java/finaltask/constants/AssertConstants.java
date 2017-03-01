@@ -1,4 +1,4 @@
-package final_task.constants.assertion;
+package finaltask.constants;
 
 public final class AssertConstants {
 

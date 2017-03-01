@@ -1,14 +1,10 @@
-package final_task.pages;
+package finaltask.pages;
 
-import final_task.core.page.BasePage;
+import finaltask.core.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LetterPage extends BasePage {
-    public LetterPage() {
-        super();
-    }
-
     @FindBy(name = "to")
     private WebElement toInputField;
 
@@ -20,6 +16,10 @@ public class LetterPage extends BasePage {
 
     @FindBy(xpath = ".//*[@class='n1tfz']/td[1]/div/div[2]")
     private WebElement sendMessageButton;
+
+    public LetterPage() {
+        super();
+    }
 
     public LetterPage toInputFieldWrite(String to) {
         toInputField.sendKeys(to);

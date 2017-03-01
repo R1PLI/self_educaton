@@ -1,6 +1,6 @@
-package final_task.pages;
+package finaltask.pages;
 
-import final_task.core.page.BasePage;
+import finaltask.core.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

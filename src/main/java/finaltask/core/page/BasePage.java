@@ -1,11 +1,10 @@
-package final_task.core.page;
+package finaltask.core.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import final_task.core.driver.Driver;
+import finaltask.core.driver.Driver;
 
-public class BasePage {
-
+public abstract class BasePage {
     private WebDriver driver;
 
     public BasePage() {
