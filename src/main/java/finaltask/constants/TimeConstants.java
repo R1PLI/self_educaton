@@ -1,6 +1,6 @@
 package finaltask.constants;
 
-public class TimeConstants {
+public final class TimeConstants {
 
     public static final int IMPLICITYLT_WAIT_TIME = 10;
     public static final int PAGE_LOAD_TIME = 10;
