@@ -3,7 +3,7 @@ package final_task_test;
 import final_task_test.steps.InboxPageSteps;
 import final_task_test.steps.LetterPageSteps;
 import final_task_test.steps.LoginPageSteps;
-import finaltask.data.DataProviderClass;
+import finaltask.data.MailingDataProviderClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,7 +20,7 @@ public class BasicGoogleTest extends BaseTest {
         letterPageSteps = new LetterPageSteps();
     }
 
-    @Test(enabled = true, dataProvider = "GmailMailing", dataProviderClass = DataProviderClass.class)
+    @Test(enabled = true, dataProvider = "GmailMailing", dataProviderClass = MailingDataProviderClass.class)
     public void googleSearch(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) {
 
         loginPageSteps.loginInInbox(mailLogin, mailPwd);
@@ -35,7 +35,7 @@ public class BasicGoogleTest extends BaseTest {
         inboxPageSteps.verifyLetterSubject(subjCompare);
     }
 
-    @Test(enabled = true, dataProvider = "DeleteInboxLetter", dataProviderClass = DataProviderClass.class)
+    @Test(enabled = true, dataProvider = "DeleteInboxLetter", dataProviderClass = MailingDataProviderClass.class)
     public void inboxCleaning(String mailLogin, String mailPwd) {
 
         loginPageSteps.loginInInbox(mailLogin, mailPwd);
