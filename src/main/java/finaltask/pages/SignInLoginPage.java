@@ -6,11 +6,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignInLoginPage extends BasePage {
 
-    @FindBy(css = "input#Email")
+    public static final String EMAIL_LOGIN_FIELD = "input#Email";
+    public static final String LOGIN_NEXT_BUTTON = "signIn";
+
+    @FindBy(css = EMAIL_LOGIN_FIELD)
     private WebElement emailLoginField;
 
-    @FindBy(name = "signIn")
-    private WebElement loginNExtButton;
+    @FindBy(name = LOGIN_NEXT_BUTTON)
+    private WebElement loginNextButton;
 
     public SignInLoginPage() {
         super();
@@ -22,7 +25,7 @@ public class SignInLoginPage extends BasePage {
     }
 
     public SignInPwdPage emailLoginButtonClick() {
-        loginNExtButton.click();
+        loginNextButton.click();
         return new SignInPwdPage();
     }
 }

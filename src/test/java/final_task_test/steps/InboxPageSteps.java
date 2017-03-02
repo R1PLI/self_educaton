@@ -12,27 +12,30 @@ public class InboxPageSteps {
 
     InboxPage inboxPage = new InboxPage();
 
-    public void verifyElementIsPresented() {
-        assertThat(GeneralHelper.isElementPresented(inboxPage.getWriteLetterButton())).isTrue();
-    }
-
     public void goToLetterPage() {
         inboxPage.writeLetterButtonClick();
+        logger.info("Switch to letter page");
     }
 
     public void newLetterLinkClick() {
-        inboxPage.newMessageLinkClick();
-    }
-
-    public void selectAllLetters() {
-        inboxPage.allMessageSelectorClick();
+        inboxPage.newLetterLinkClick();
+        logger.info("Update inbox for new letters");
     }
 
     public void deleteMessages() {
+        inboxPage.allMessageSelectorClick();
         inboxPage.deleteLetterButtonClick();
+        logger.info("Delete all letters in inbox");
+    }
+
+
+    public void verifyElementIsPresented() {
+        assertThat(GeneralHelper.isElementPresented(inboxPage.getWriteLetterButton())).isTrue();
+        logger.info("Verification for element's presenting");
     }
 
     public void verifyLetterSubject(String subjectToCompare) {
         assertThat(inboxPage.getMessageSubjectTextElement().getText()).isEqualToIgnoringCase(subjectToCompare);
+        logger.info("Verification for message's subject");
     }
 }

@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="WARN">
-
     <appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-            <!--<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="NEUTRAL"/>-->
             <ThresholdFilter level="WARN"  onMatch="DENY" onMismatch="NEUTRAL"/>
-            <!--<ThresholdFilter level="TRACE"  onMatch="ACCEPT" onMismatch="DENY"/>-->
         </Console>
-
 
         <RollingFile name="error" fileName="error_logging_file.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
@@ -23,7 +19,6 @@
 
     <loggers>
         <root level="debug">
-            <!--<appender-ref ref="all" level="all"/>-->
             <appender-ref ref="error" level="error"/>
             <appender-ref ref="Console" level="info"/>
         </root>

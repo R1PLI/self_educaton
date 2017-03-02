@@ -9,19 +9,25 @@ import java.util.List;
 
 public class InboxPage extends BasePage {
 
-    @FindBy(className = "aic")
+    public static final String WRITE_ELEMENT_LETTER_BUTTON = "aic";
+    public static final String NEW_LETTER_LINK = ".//*[@class='nU n1']/a";
+    public static final String ALL_LETTER_CHECKBOX = "T-Jo-auh";
+    public static final String DELETE_LETTER_BUTTON = ".//*[@class='G-tF']/div[2]/div[3]/div/div";
+    public static final String MESSAGE_SUBJECT_LIST = "bog";
+
+    @FindBy(className = WRITE_ELEMENT_LETTER_BUTTON)
     private WebElement writeLetterButton;
 
-    @FindBy(xpath = ".//*[@class='nU n1']/a")
-    private WebElement newMessageLink;
+    @FindBy(xpath = NEW_LETTER_LINK)
+    private WebElement newLetterLink;
 
-    @FindBy(className = "T-Jo-auh")
-    private WebElement allLetterSelector;
+    @FindBy(className = ALL_LETTER_CHECKBOX)
+    private WebElement allLetterCheckbox;
 
-    @FindBy(xpath = ".//*[@class='G-tF']/div[2]/div[3]/div/div")
+    @FindBy(xpath = DELETE_LETTER_BUTTON)
     private WebElement deleteLetterButton;
 
-    @FindAll({@FindBy(className = "bog")})
+    @FindAll({@FindBy(className = MESSAGE_SUBJECT_LIST)})
     private List<WebElement> messageSubjectText;
 
     public InboxPage() {
@@ -32,9 +38,8 @@ public class InboxPage extends BasePage {
         return writeLetterButton;
     }
 
-
-    public InboxPage newMessageLinkClick() {
-        newMessageLink.click();
+    public InboxPage newLetterLinkClick() {
+        newLetterLink.click();
         return this;
     }
 
@@ -44,7 +49,7 @@ public class InboxPage extends BasePage {
     }
 
     public InboxPage allMessageSelectorClick() {
-        allLetterSelector.click();
+        allLetterCheckbox.click();
         return this;
     }
 

@@ -4,8 +4,8 @@ package final_task_test;
 import finaltask.core.driver.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import static finaltask.constants.UrlConstants.GMAIL_MAIN_PAGE;
 
@@ -13,12 +13,14 @@ public abstract class BaseTest {
 
     private static Logger logger = LogManager.getLogger(BaseTest.class);
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp() {
         Driver.getInstance().get(GMAIL_MAIN_PAGE);
+        logger.info("Creating driver's instance");
+        logger.info("Set url for driver");
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         try {
             Driver.clearCookie();
