@@ -15,6 +15,12 @@ public class InboxPage extends BasePage {
     @FindBy(xpath = ".//*[@class='nU n1']/a")
     private WebElement newMessageLink;
 
+    @FindBy(className = "T-Jo-auh")
+    private WebElement allLetterSelector;
+
+    @FindBy(xpath = ".//*[@class='G-tF']/div[2]/div[3]/div/div")
+    private WebElement deleteLetterButton;
+
     @FindAll({@FindBy(className = "bog")})
     private List<WebElement> messageSubjectText;
 
@@ -26,9 +32,6 @@ public class InboxPage extends BasePage {
         return writeLetterButton;
     }
 
-    public List<WebElement> getMessageSubjectField() {
-        return messageSubjectText;
-    }
 
     public InboxPage newMessageLinkClick() {
         newMessageLink.click();
@@ -38,5 +41,19 @@ public class InboxPage extends BasePage {
     public LetterPage writeLetterButtonClick() {
         writeLetterButton.click();
         return new LetterPage();
+    }
+
+    public InboxPage allMessageSelectorClick() {
+        allLetterSelector.click();
+        return this;
+    }
+
+    public InboxPage deleteLetterButtonClick() {
+        deleteLetterButton.click();
+        return this;
+    }
+
+    public WebElement getMessageSubjectTextElement() {
+        return messageSubjectText.get(messageSubjectText.size() - 1);
     }
 }

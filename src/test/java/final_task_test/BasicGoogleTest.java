@@ -1,34 +1,46 @@
 package final_task_test;
 
+import final_task_test.steps.InboxPageSteps;
+import final_task_test.steps.LetterPageSteps;
+import final_task_test.steps.LoginPageSteps;
 import finaltask.data.DataProviderClass;
-import finaltask.helper.GeneralHelper;
-import finaltask.pages.InboxPage;
-import finaltask.pages.SignInLoginPage;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class BasicGoogleTest extends BaseTest {
 
+    private LoginPageSteps loginPageSteps;
+    private InboxPageSteps inboxPageSteps;
+    private LetterPageSteps letterPageSteps;
+
+    @BeforeMethod
+    public void stepsInit() {
+        loginPageSteps = new LoginPageSteps();
+        inboxPageSteps = new InboxPageSteps();
+        letterPageSteps = new LetterPageSteps();
+    }
+
     @Test(enabled = true, dataProvider = "GmailMailing", dataProviderClass = DataProviderClass.class)
-    public void googleSearch(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare, int index) {
-        new SignInLoginPage().sendInputLogin(mailLogin)
-                .emailLoginButtonClick()
-                .sendInputPassword(mailPwd)
-                .pwdLoginButtonClick();
+    public void googleSearch(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) {
 
-        //TODO: add steps
-        assertThat(GeneralHelper.isElementPresented(new InboxPage().getWriteLetterButton())).isTrue();
+        loginPageSteps.loginInInbox(mailLogin, mailPwd);
 
-        new InboxPage().writeLetterButtonClick()
-                .toInputFieldWrite(letterTo)
-                .subjectInputFieldWrite(letterSubj)
-                .messageInputFieldWrite(letterMsg)
-                .sendMessageButtonClick()
-                .newMessageLinkClick();
+        inboxPageSteps.verifyElementIsPresented();
+        inboxPageSteps.goToLetterPage();
 
-        //TODO: add steps
-        ExpectedConditions.textToBePresentInElement(new InboxPage().getMessageSubjectField().get(index), subjCompare);
+        letterPageSteps.composeLetter(letterTo, letterSubj, letterMsg);
+        letterPageSteps.sendLetter();
+
+        inboxPageSteps.newLetterLinkClick();
+        inboxPageSteps.verifyLetterSubject(subjCompare);
+    }
+
+    @Test(enabled = true, dataProvider = "DeleteInboxLetter", dataProviderClass = DataProviderClass.class)
+    public void inboxCleaning(String mailLogin, String mailPwd) {
+
+        loginPageSteps.loginInInbox(mailLogin, mailPwd);
+
+        inboxPageSteps.selectAllLetters();
+        inboxPageSteps.deleteMessages();
     }
 }

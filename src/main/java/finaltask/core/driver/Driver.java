@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static finaltask.constants.TimeConstants.*;
 
 public class Driver {
     private static WebDriver webDriver;
@@ -13,12 +14,16 @@ public class Driver {
 
     }
 
+    private static void setDriverImplicitly(int implicitlyTime, int pageLoadTime, int setScriptTime) {
+        webDriver.manage().timeouts().implicitlyWait(implicitlyTime, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().pageLoadTimeout(pageLoadTime, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().setScriptTimeout(setScriptTime, TimeUnit.SECONDS);
+    }
+
     public static WebDriver getInstance() {
         if (webDriver == null) {
             webDriver = new ChromeDriver();
-            webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            webDriver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-            webDriver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+            setDriverImplicitly(IMPLICITYLT_WAIT_TIME, PAGE_LOAD_TIME, SET_SCRIPT_TIME);
             return webDriver;
         } else {
             return webDriver;
@@ -35,12 +40,6 @@ public class Driver {
     public static void clearCookie() {
         if (webDriver != null) {
             webDriver.manage().deleteAllCookies();
-        }
-    }
-
-    public static void pageRefresh() {
-        if(webDriver != null) {
-            webDriver.navigate().refresh();
         }
     }
 }

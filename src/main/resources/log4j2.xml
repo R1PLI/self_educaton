@@ -10,7 +10,7 @@
         </Console>
 
 
-        <!--<RollingFile name="error" fileName="error_logging_file.log"
+        <RollingFile name="error" fileName="error_logging_file.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern=" %d %p %c{1.} [%t] %m%n"/>
             <Policies>
@@ -19,22 +19,12 @@
             </Policies>
             <ThresholdFilter level="FATAL" onMatch="DENY" onMismatch="NEUTRAL"/>
         </RollingFile>
-        <RollingFile name="all" fileName="all_log_file.log"
-                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
-            <PatternLayout>
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
-            </PatternLayout>
-            <Policies>
-                <TimeBasedTriggeringPolicy/>
-                <SizeBasedTriggeringPolicy size="250 MB"/>
-            </Policies>
-        </RollingFile>-->
     </appenders>
 
     <loggers>
         <root level="debug">
-            <!--<appender-ref ref="all" level="all"/>
-            <appender-ref ref="error" level="error"/>-->
+            <!--<appender-ref ref="all" level="all"/>-->
+            <appender-ref ref="error" level="error"/>
             <appender-ref ref="Console" level="info"/>
         </root>
     </loggers>
