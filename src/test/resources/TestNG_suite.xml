@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-    <test name="GmailMailing">
+<suite name="Mailing">
+    <test name="Final Task, Sending email">
         <classes>
             <class name="final_task_test.BasicGoogleTest">
                 <methods>
-                    <include name="googleSearch"/>
+                    <include name="emailSending"/>
                     <include name="inboxCleaning"/>
                 </methods>
             </class>

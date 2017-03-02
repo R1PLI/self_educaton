@@ -7,7 +7,14 @@ import finaltask.data.MailingDataProviderClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.annotations.Title;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 
+@Features("Email feature")
+@Stories({"Letter sending"})
 public class BasicGoogleTest extends BaseTest {
 
     private LoginPageSteps loginPageSteps;
@@ -21,8 +28,10 @@ public class BasicGoogleTest extends BaseTest {
         letterPageSteps = new LetterPageSteps();
     }
 
-    @Test(dataProvider = "GmailMailing", dataProviderClass = MailingDataProviderClass.class)
-    public void googleSearch(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) {
+    @Severity(SeverityLevel.CRITICAL)
+    @Title("G-mail test")
+    @Test(dataProvider = "G-mailMailing", dataProviderClass = MailingDataProviderClass.class)
+    public void emailSending(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) {
         loginPageSteps.loginInInbox(mailLogin, mailPwd);
         inboxPageSteps.verifyElementIsPresented();
         inboxPageSteps.goToLetterPage();
