@@ -6,7 +6,7 @@
             <ThresholdFilter level="WARN"  onMatch="DENY" onMismatch="NEUTRAL"/>
         </Console>
 
-        <RollingFile name="error" fileName="error_logging_file.log"
+        <RollingFile name="error" fileName="target/logs/error_logging_file.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern=" %d %p %c{1.} [%t] %m%n"/>
             <Policies>
