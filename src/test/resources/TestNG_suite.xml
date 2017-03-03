@@ -3,12 +3,7 @@
 <suite name="Mailing">
     <test name="Final Task, Sending email">
         <classes>
-            <class name="final_task_test.BasicGoogleTest">
-                <methods>
-                    <include name="emailSending"/>
-                    <include name="inboxCleaning"/>
-                </methods>
-            </class>
+            <class name="final_task_test.BasicGoogleTest"/>
         </classes>
     </test>
 </suite>
