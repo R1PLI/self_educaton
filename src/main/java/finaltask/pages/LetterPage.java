@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LetterPage extends BasePage {
-    public static final String TO_INPUT_FIELD = "to";
-    public static final String SUBJECT_INPUT_FIELD = "subjectbox";
-    public static final String MESSAGE_TEXT_AREA = ".//*[@class='Ap']/div[2]/div";
-    public static final String SEND_MESSAGE_BUTTON = ".//*[@class='n1tfz']/td[1]/div/div[2]";
+
+    private static final String TO_INPUT_FIELD = "to";
+    private static final String SUBJECT_INPUT_FIELD = "subjectbox";
+    private static final String MESSAGE_TEXT_AREA = ".//*[@class='Ap']/div[2]/div";
+    private static final String SEND_MESSAGE_BUTTON = ".//*[@class='n1tfz']/td[1]/div/div[2]";
     
     @FindBy(name = TO_INPUT_FIELD)
     private WebElement toInputField;

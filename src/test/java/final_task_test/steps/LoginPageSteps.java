@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class LoginPageSteps {
+
     private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
     SignInLoginPage signInLogin = new SignInLoginPage();

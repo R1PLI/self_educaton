@@ -5,8 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SignInPwdPage extends BasePage {
-    public static final String PSS_INPUT_FIELD = "input#Passwd";
-    public static final String SING_IN_BUTTON = "signIn";
+
+    private static final String PSS_INPUT_FIELD = "input#Passwd";
+    private static final String SING_IN_BUTTON = "signIn";
 
     @FindBy(css = PSS_INPUT_FIELD)
     private WebElement passwordLoginField;

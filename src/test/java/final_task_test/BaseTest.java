@@ -1,12 +1,10 @@
 package final_task_test;
 
-
 import finaltask.core.driver.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import ru.yandex.qatools.allure.annotations.Step;
 
 import static finaltask.constants.UrlConstants.GMAIL_MAIN_PAGE;
 

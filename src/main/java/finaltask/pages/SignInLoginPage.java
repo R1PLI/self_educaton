@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignInLoginPage extends BasePage {
 
-    public static final String EMAIL_LOGIN_FIELD = "input#Email";
-    public static final String LOGIN_NEXT_BUTTON = "signIn";
+    private static final String EMAIL_LOGIN_FIELD = "input#Email";
+    private static final String LOGIN_NEXT_BUTTON = "signIn";
 
     @FindBy(css = EMAIL_LOGIN_FIELD)
     private WebElement emailLoginField;

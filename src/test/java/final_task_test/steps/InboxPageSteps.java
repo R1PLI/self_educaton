@@ -10,15 +10,18 @@ import ru.yandex.qatools.allure.annotations.Step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class InboxPageSteps {
+
     private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
     InboxPage inboxPage = new InboxPage();
 
+    @Step("Open letter page")
     public void goToLetterPage() {
         inboxPage.writeLetterButtonClick();
         logger.info("Switch to letter page");
     }
 
+    @Step("Click 'New letters' for inbox updating")
     public void newLetterLinkClick() {
         inboxPage.newLetterLinkClick();
         logger.info("Update inbox for new letters");

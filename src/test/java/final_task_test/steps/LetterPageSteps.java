@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class LetterPageSteps {
+
     private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
     LetterPage letterPage = new LetterPage();
