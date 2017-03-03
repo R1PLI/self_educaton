@@ -7,6 +7,11 @@
         <value>Google Chrome</value>
     </parameter>
     <parameter>
+        <name>Browser Version</name>
+        <key>Browser version</key>
+        <value>Version 56.0.2924.87 (64-bit)</value>
+    </parameter>
+    <parameter>
         <name>Test stand</name>
         <key>Test stand url</key>
         <value>http://gmail.com</value>

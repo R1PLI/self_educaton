@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignInLoginPage extends BasePage {
 
-    private static final String EMAIL_LOGIN_FIELD = "input#Email";
-    private static final String LOGIN_NEXT_BUTTON = "signIn";
+    private static final String EMAIL_LOGIN_FIELD = "//input[@id='Email']";
+    private static final String LOGIN_NEXT_BUTTON = "//input[@id='next']";
 
-    @FindBy(css = EMAIL_LOGIN_FIELD)
+    @FindBy(xpath = EMAIL_LOGIN_FIELD)
     private WebElement emailLoginField;
 
-    @FindBy(name = LOGIN_NEXT_BUTTON)
+    @FindBy(xpath = LOGIN_NEXT_BUTTON)
     private WebElement loginNextButton;
 
     public SignInLoginPage() {

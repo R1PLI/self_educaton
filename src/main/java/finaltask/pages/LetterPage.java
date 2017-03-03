@@ -6,15 +6,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class LetterPage extends BasePage {
 
-    private static final String TO_INPUT_FIELD = "to";
-    private static final String SUBJECT_INPUT_FIELD = "subjectbox";
-    private static final String MESSAGE_TEXT_AREA = ".//*[@class='Ap']/div[2]/div";
-    private static final String SEND_MESSAGE_BUTTON = ".//*[@class='n1tfz']/td[1]/div/div[2]";
+    private static final String TO_INPUT_FIELD = "//textarea[@name='to']";
+    private static final String SUBJECT_INPUT_FIELD = "//input[@name='subjectbox']";
+    private static final String MESSAGE_TEXT_AREA = "//input[@name='subjectbox']/ancestor::form/following-sibling::table//div[@role='textbox']";
+    private static final String SEND_MESSAGE_BUTTON = "(//div[@role='dialog']//div[@role='button' and @tabindex='1'])[1]";
     
-    @FindBy(name = TO_INPUT_FIELD)
+    @FindBy(xpath = TO_INPUT_FIELD)
     private WebElement toInputField;
 
-    @FindBy(name = SUBJECT_INPUT_FIELD)
+    @FindBy(xpath = SUBJECT_INPUT_FIELD)
     private WebElement subjectInputField;
 
     @FindBy(xpath = MESSAGE_TEXT_AREA)

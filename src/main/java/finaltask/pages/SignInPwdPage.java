@@ -6,13 +6,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class SignInPwdPage extends BasePage {
 
-    private static final String PSS_INPUT_FIELD = "input#Passwd";
-    private static final String SING_IN_BUTTON = "signIn";
+    private static final String PSS_INPUT_FIELD = "//input[@id='Passwd']";
+    private static final String SIGN_IN_BUTTON = "//input[@id='signIn']";
 
-    @FindBy(css = PSS_INPUT_FIELD)
+    @FindBy(xpath = PSS_INPUT_FIELD)
     private WebElement passwordLoginField;
 
-    @FindBy(id = SING_IN_BUTTON)
+    @FindBy(xpath = SIGN_IN_BUTTON)
     private WebElement signInButton;
 
     public SignInPwdPage() {
