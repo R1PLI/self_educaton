@@ -15,7 +15,7 @@ public class Driver {
 
     }
 
-    private static void setDriverImplicitly(int implicitlyTime, int pageLoadTime, int setScriptTime) {
+    public static void setDriverImplicitly(int implicitlyTime, int pageLoadTime, int setScriptTime) {
         webDriver.manage().timeouts().implicitlyWait(implicitlyTime, TimeUnit.SECONDS);
         webDriver.manage().timeouts().pageLoadTimeout(pageLoadTime, TimeUnit.SECONDS);
         webDriver.manage().timeouts().setScriptTimeout(setScriptTime, TimeUnit.SECONDS);
