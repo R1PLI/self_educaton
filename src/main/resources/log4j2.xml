@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="WARN">
     <appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-            <ThresholdFilter level="WARN"  onMatch="DENY" onMismatch="NEUTRAL"/>
-        </Console>
-
         <RollingFile name="error" fileName="target/logs/error_logging_file.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern=" %d %p %c{1.} [%t] %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
+            </Policies>
+            <ThresholdFilter level="FATAL" onMatch="DENY" onMismatch="NEUTRAL"/>
+        </RollingFile>
+
+        <RollingFile name="info" fileName="target/logs/info_logging_file.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern=" %d %p %c{1.} [%t] %m%n"/>
             <Policies>
@@ -20,7 +25,7 @@
     <loggers>
         <root level="debug">
             <appender-ref ref="error" level="error"/>
-            <appender-ref ref="Console" level="info"/>
+            <appender-ref ref="info" level="info"/>
         </root>
     </loggers>
 </configuration>
