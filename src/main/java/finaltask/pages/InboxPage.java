@@ -11,9 +11,10 @@ public class InboxPage extends BasePage {
 
     private static final String WRITE_ELEMENT_LETTER_BUTTON = "//div[@role='navigation']/preceding-sibling:: div//div[@role='button']";
     private static final String NEW_LETTER_LINK = "(//div[@role='navigation']//a)[1]";
-    private static final String MESSAGE_SUBJECT_LIST = "//div[@role='link']//b";
+    private static final String MESSAGE_SUBJECT_LIST = "//div[@role='main']/descendant::table/descendant::tr/descendant::span/b";
     private static final String ALL_LETTER_CHECKBOX = "//span[@role='checkbox']/div";
     private static final String DELETE_LETTER_BUTTON = "//div/div[@role='button' and @tabindex='0'][3]/div";
+    private static final String FIRST_MESSAGE = "//div[@role='main']/descendant::table/descendant::tr[1]/descendant::span/b";
 
     @FindBy(xpath = WRITE_ELEMENT_LETTER_BUTTON)
     private WebElement writeLetterButton;
@@ -27,6 +28,9 @@ public class InboxPage extends BasePage {
     @FindBy(xpath = DELETE_LETTER_BUTTON)
     private WebElement deleteLetterButton;
 
+    @FindBy(xpath = FIRST_MESSAGE)
+    private WebElement firstMessageSubject;
+
     @FindAll({@FindBy(xpath = MESSAGE_SUBJECT_LIST)})
     private List<WebElement> messageSubjectText;
 
@@ -38,27 +42,23 @@ public class InboxPage extends BasePage {
         return writeLetterButton;
     }
 
-    public InboxPage newLetterLinkClick() {
-        newLetterLink.click();
-        return this;
+    public WebElement getNewLetterLink() {
+        return newLetterLink;
     }
 
-    public LetterPage writeLetterButtonClick() {
-        writeLetterButton.click();
-        return new LetterPage();
+    public WebElement getAllLetterCheckbox() {
+        return allLetterCheckbox;
     }
 
-    public InboxPage allMessageSelectorClick() {
-        allLetterCheckbox.click();
-        return this;
+    public WebElement getDeleteLetterButton() {
+        return deleteLetterButton;
     }
 
-    public InboxPage deleteLetterButtonClick() {
-        deleteLetterButton.click();
-        return this;
+    public List<WebElement> getMessageSubjectText() {
+        return messageSubjectText;
     }
 
-    public WebElement getMessageSubjectTextElement() {
-        return messageSubjectText.get(0);
+    public WebElement getFirstMessageSubject() {
+        return firstMessageSubject;
     }
 }

@@ -19,13 +19,11 @@ public class SignInPwdPage extends BasePage {
         super();
     }
 
-    public SignInPwdPage sendInputPassword(String pwd) {
-        passwordLoginField.sendKeys(pwd);
-        return this;
+    public WebElement getPasswordLoginField() {
+        return passwordLoginField;
     }
 
-    public InboxPage pwdLoginButtonClick() {
-        signInButton.click();
-        return new InboxPage();
+    public WebElement getSignInButton() {
+        return signInButton;
     }
 }

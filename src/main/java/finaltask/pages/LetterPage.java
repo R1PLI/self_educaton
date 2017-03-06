@@ -27,23 +27,19 @@ public class LetterPage extends BasePage {
         super();
     }
 
-    public LetterPage toInputFieldWrite(String to) {
-        toInputField.sendKeys(to);
-        return this;
+    public WebElement getToInputField() {
+        return toInputField;
     }
 
-    public LetterPage subjectInputFieldWrite(String subject) {
-        subjectInputField.sendKeys(subject);
-        return this;
+    public WebElement getSubjectInputField() {
+        return subjectInputField;
     }
 
-    public LetterPage messageInputFieldWrite(String message) {
-        messageTextArea.sendKeys(message);
-        return this;
+    public WebElement getMessageTextArea() {
+        return messageTextArea;
     }
 
-    public InboxPage sendMessageButtonClick() {
-        sendMessageButton.click();
-        return new InboxPage();
+    public WebElement getSendMessageButton() {
+        return sendMessageButton;
     }
 }

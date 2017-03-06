@@ -1,5 +1,7 @@
 package final_task_test.steps;
 
+import finaltask.helper.pagehelper.SignInLoginPageHelper;
+import finaltask.helper.pagehelper.SignInPwdPageHelper;
 import finaltask.pages.SignInLoginPage;
 import finaltask.pages.SignInPwdPage;
 import org.apache.logging.log4j.LogManager;
@@ -10,15 +12,15 @@ public class LoginPageSteps {
 
     private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
-    SignInLoginPage signInLogin = new SignInLoginPage();
-    SignInPwdPage signInPwdPage = new SignInPwdPage();
+    private SignInLoginPageHelper signInLoginHelper = new SignInLoginPageHelper();
+    private SignInPwdPageHelper signInPwdPageHelper = new SignInPwdPageHelper();
 
     @Step("Login in inbox")
     public void loginInInbox(String email, String pwd) {
-        signInLogin.sendInputLogin(email);
-        signInLogin.emailLoginButtonClick();
-        signInPwdPage.sendInputPassword(pwd);
-        signInPwdPage.pwdLoginButtonClick();
+        signInLoginHelper.sendInputLogin(email);
+        signInLoginHelper.emailLoginButtonClick();
+        signInPwdPageHelper.sendInputLogin(pwd);
+        signInPwdPageHelper.emailLoginButtonClick();
         logger.info("Login in inbox");
     }
 }

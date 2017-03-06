@@ -19,13 +19,11 @@ public class SignInLoginPage extends BasePage {
         super();
     }
 
-    public SignInLoginPage sendInputLogin(String email) {
-        emailLoginField.sendKeys(email);
-        return this;
+    public WebElement getEmailLoginField() {
+        return emailLoginField;
     }
 
-    public SignInPwdPage emailLoginButtonClick() {
-        loginNextButton.click();
-        return new SignInPwdPage();
+    public WebElement getLoginNextButton() {
+        return loginNextButton;
     }
 }

@@ -34,6 +34,7 @@ public class BasicGoogleTest extends BaseTest {
     public void emailSending(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) {
         loginPageSteps.loginInInbox(mailLogin, mailPwd);
         inboxPageSteps.verifyElementIsPresented();
+        inboxPageSteps.deleteMessagesIfPossible();
         inboxPageSteps.goToLetterPage();
         letterPageSteps.composeLetter(letterTo, letterSubj, letterMsg);
         letterPageSteps.sendLetter();
@@ -43,6 +44,6 @@ public class BasicGoogleTest extends BaseTest {
 
     @AfterTest
     public void inboxCleaning() {
-        inboxPageSteps.deleteMessages();
+        inboxPageSteps.deleteMessagesIfPossible();
     }
 }

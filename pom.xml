@@ -98,7 +98,7 @@
                                 <resource>
                                     <directory>src/main/resources</directory>
                                     <includes>
-                                        <include>environment.xml</include>
+                                        <include>allure/environment.xml</include>
                                     </includes>
                                 </resource>
                             </resources>
@@ -194,6 +194,11 @@
                     <artifactId>junit</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.properties</groupId>
+            <artifactId>properties-loader</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
 </project>

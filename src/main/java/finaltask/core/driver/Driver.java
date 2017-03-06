@@ -24,6 +24,7 @@ public class Driver {
     public static WebDriver getInstance() {
         if (webDriver == null) {
             webDriver = new ChromeDriver();
+            webDriver.manage().window().maximize();
             setDriverImplicitly(IMPLICITLY_WAIT_TIME, PAGE_LOAD_TIME, SET_SCRIPT_TIME);
             return webDriver;
         } else {

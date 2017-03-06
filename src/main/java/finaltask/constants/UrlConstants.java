@@ -1,9 +1,20 @@
 package finaltask.constants;
 
-public final class UrlConstants {
+import ru.yandex.qatools.properties.PropertyLoader;
+import ru.yandex.qatools.properties.annotations.Property;
+import ru.yandex.qatools.properties.annotations.Resource;
 
-    public static final String GMAIL_MAIN_PAGE = "https://www.google.com/gmail/";
+@Resource.Classpath("properties/urls.properties")
+public class UrlConstants {
 
-    private UrlConstants() {
+    @Property("gmail.main.page")
+    private String gmailMainPage;
+
+    public UrlConstants() {
+        PropertyLoader.populate(this);
+    }
+
+    public String getGmailMainPage() {
+        return gmailMainPage;
     }
 }
