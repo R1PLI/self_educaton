@@ -1,15 +1,12 @@
 package final_task_test.steps;
 
-import finaltask.helper.GeneralHelper;
 import finaltask.helper.pagehelper.InboxPageHelper;
 import finaltask.pages.InboxPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.yandex.qatools.allure.annotations.Step;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 
 public class InboxPageSteps {
 

@@ -1,4 +1,4 @@
-package finaltask.constants;
+package finaltask.core.property;
 
 import ru.yandex.qatools.properties.PropertyLoader;
 import ru.yandex.qatools.properties.annotations.Property;

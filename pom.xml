@@ -200,5 +200,11 @@
             <artifactId>properties-loader</artifactId>
             <version>1.4</version>
         </dependency>
+        <!-- for future implementation-->
+        <!--<dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.11</version>
+        </dependency>-->
     </dependencies>
 </project>

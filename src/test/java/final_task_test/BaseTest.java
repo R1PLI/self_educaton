@@ -1,6 +1,6 @@
 package final_task_test;
 
-import finaltask.constants.UrlConstants;
+import finaltask.core.property.UrlConstants;
 import finaltask.core.driver.Driver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
