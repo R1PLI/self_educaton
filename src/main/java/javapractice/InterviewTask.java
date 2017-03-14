@@ -8,6 +8,7 @@ public class InterviewTask {
         runFibonacci(12);
         runIsPrime(3);
         runStringReverse("apollo");
+        System.out.println(test1("abc", 1));
     }
 
     //First
@@ -76,4 +77,13 @@ public class InterviewTask {
         System.out.println(stringReverseStringBuilder(string));
         System.out.println(stringReverseLoop(string));
     }
+
+    public static String test1(String string, int number) {
+        return string;
+    }
+
+    public static int test1(int number, String string) {
+        return number;
+    }
+
 }
