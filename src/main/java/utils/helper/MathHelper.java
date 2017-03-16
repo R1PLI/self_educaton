@@ -27,6 +27,7 @@ public class MathHelper {
         List<Integer> concatList;
         List<Integer> minMaxList;
         Integer min;
+        Integer summa;
 
         sport = asList(
                 new SportHelper("Ivan", 15),
@@ -72,9 +73,12 @@ public class MathHelper {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
-        min = Stream.of(1, 2, 3)
+       min = Stream.of(1, 2, 3)
                 .min(Integer::compareTo)
                 .get();
+
+        summa = Stream.of(1,2,3)
+                .reduce(0, (acc, value) -> acc + value);
 
         System.out.println("Name is " + name);
         System.out.println("Amount = " + nameCount);
@@ -85,6 +89,7 @@ public class MathHelper {
         System.out.println("String list with all in upper case " + stringToUpperCase);
         System.out.println("Concat two arrays " + concatList);
         System.out.println("Min value in array " + min);
+        System.out.println("Elements summ " + summa);
     }
 
 }
