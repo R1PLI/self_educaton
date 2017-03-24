@@ -1,6 +1,7 @@
 package utils.helper;
 
 import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
@@ -22,6 +23,7 @@ public class MathHelper {
         System.out.println("Musicans are: " + returnBandMusicants());
         System.out.println("Number of lower case characters: " + getCountOfUpperCaseChars("Band"));
         System.out.println("Coolest string: " + getCoolestString(stringList));
+        System.out.println(getMinFromStringNumbers("2 3 4 5 6 7", " ").getMin());
     }
 
     public static String getNameInCollection() {
@@ -130,5 +132,11 @@ public class MathHelper {
     public static Optional<String> getCoolestString(List<String> stringList) {
         return stringList.stream()
                 .max(Comparator.comparing(MathHelper::getCountOfUpperCaseChars));
+    }
+
+    public static IntSummaryStatistics getMinFromStringNumbers(String integerSequence, String delimeter) {
+        return Arrays.stream(integerSequence.split(delimeter))
+                .mapToInt(Integer::parseInt)
+                .summaryStatistics();
     }
 }
