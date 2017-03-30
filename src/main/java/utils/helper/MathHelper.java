@@ -1,7 +1,6 @@
 package utils.helper;
 
 import java.util.*;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
@@ -93,7 +92,7 @@ public class MathHelper {
     }
 
     public static Integer minValueInList() {
-        return Stream.of(1, 2, 3)
+        return Stream.of(3, 2, 1)
                 .min(Integer::compareTo)
                 .get();
     }
