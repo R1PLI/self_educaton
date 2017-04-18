@@ -1,9 +1,11 @@
 package finaltask.pages;
 
 import finaltask.core.page.BasePage;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Getter
 public class SignInPwdPage extends BasePage {
 
     private static final String PSS_INPUT_FIELD = "//input[@id='Passwd']";
@@ -17,13 +19,5 @@ public class SignInPwdPage extends BasePage {
 
     public SignInPwdPage() {
         super();
-    }
-
-    public WebElement getPasswordLoginField() {
-        return passwordLoginField;
-    }
-
-    public WebElement getSignInButton() {
-        return signInButton;
     }
 }

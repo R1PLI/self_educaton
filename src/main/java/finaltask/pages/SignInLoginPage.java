@@ -1,9 +1,11 @@
 package finaltask.pages;
 
 import finaltask.core.page.BasePage;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Getter
 public class SignInLoginPage extends BasePage {
 
     private static final String EMAIL_LOGIN_FIELD = "//input[@id='Email']";
@@ -17,13 +19,5 @@ public class SignInLoginPage extends BasePage {
 
     public SignInLoginPage() {
         super();
-    }
-
-    public WebElement getEmailLoginField() {
-        return emailLoginField;
-    }
-
-    public WebElement getLoginNextButton() {
-        return loginNextButton;
     }
 }

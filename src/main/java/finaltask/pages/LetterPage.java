@@ -1,16 +1,18 @@
 package finaltask.pages;
 
 import finaltask.core.page.BasePage;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+@Getter
 public class LetterPage extends BasePage {
 
     private static final String TO_INPUT_FIELD = "//textarea[@name='to']";
     private static final String SUBJECT_INPUT_FIELD = "//input[@name='subjectbox']";
     private static final String MESSAGE_TEXT_AREA = "//input[@name='subjectbox']/ancestor::form/following-sibling::table//div[@role='textbox']";
     private static final String SEND_MESSAGE_BUTTON = "(//div[@role='dialog']//div[@role='button' and @tabindex='1'])[1]";
-    
+
     @FindBy(xpath = TO_INPUT_FIELD)
     private WebElement toInputField;
 
@@ -25,21 +27,5 @@ public class LetterPage extends BasePage {
 
     public LetterPage() {
         super();
-    }
-
-    public WebElement getToInputField() {
-        return toInputField;
-    }
-
-    public WebElement getSubjectInputField() {
-        return subjectInputField;
-    }
-
-    public WebElement getMessageTextArea() {
-        return messageTextArea;
-    }
-
-    public WebElement getSendMessageButton() {
-        return sendMessageButton;
     }
 }

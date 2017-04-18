@@ -200,6 +200,11 @@
             <artifactId>properties-loader</artifactId>
             <version>1.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+        </dependency>
         <!-- for future implementation-->
         <!--<dependency>
             <groupId>ru.yandex.qatools.htmlelements</groupId>

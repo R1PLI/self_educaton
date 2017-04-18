@@ -1,12 +1,14 @@
 package finaltask.pages;
 
 import finaltask.core.page.BasePage;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+@Getter
 public class InboxPage extends BasePage {
 
     private static final String WRITE_ELEMENT_LETTER_BUTTON = "//div[@role='navigation']/preceding-sibling:: div//div[@role='button']";
@@ -36,29 +38,5 @@ public class InboxPage extends BasePage {
 
     public InboxPage() {
         super();
-    }
-
-    public WebElement getWriteLetterButton() {
-        return writeLetterButton;
-    }
-
-    public WebElement getNewLetterLink() {
-        return newLetterLink;
-    }
-
-    public WebElement getAllLetterCheckbox() {
-        return allLetterCheckbox;
-    }
-
-    public WebElement getDeleteLetterButton() {
-        return deleteLetterButton;
-    }
-
-    public List<WebElement> getMessageSubjectText() {
-        return messageSubjectText;
-    }
-
-    public WebElement getFirstMessageSubject() {
-        return firstMessageSubject;
     }
 }
