@@ -1,10 +1,10 @@
 package finaltask.helper.pagehelper;
 
-import finaltask.pages.InboxPage;
 import finaltask.pages.LetterPage;
 
 public class LetterPageHelper {
-    LetterPage letterPage = new LetterPage();
+
+    private LetterPage letterPage = new LetterPage();
 
     public void toInputFieldWrite(String to) {
         letterPage.getToInputField().sendKeys(to);
@@ -18,8 +18,8 @@ public class LetterPageHelper {
         letterPage.getMessageTextArea().sendKeys(message);
     }
 
-    public InboxPage sendMessageButtonClick() {
+    public void sendMessageButtonClick() {
         letterPage.getSendMessageButton().click();
-        return new InboxPage();
+
     }
 }

@@ -4,7 +4,7 @@ import finaltask.pages.SignInPwdPage;
 
 public class SignInPwdPageHelper {
 
-    SignInPwdPage signInPwdPage = new SignInPwdPage();
+    private SignInPwdPage signInPwdPage = new SignInPwdPage();
 
     public void sendInputLogin(String email) {
         signInPwdPage.getPasswordLoginField().sendKeys(email);

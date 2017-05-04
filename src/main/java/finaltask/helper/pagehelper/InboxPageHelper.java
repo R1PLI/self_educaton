@@ -2,19 +2,18 @@ package finaltask.helper.pagehelper;
 
 import finaltask.helper.GeneralHelper;
 import finaltask.pages.InboxPage;
-import finaltask.pages.LetterPage;
 
 public class InboxPageHelper {
 
-    InboxPage inboxPage = new InboxPage();
+    private InboxPage inboxPage = new InboxPage();
 
     public void newLetterLinkClick() {
         inboxPage.getNewLetterLink().click();
     }
 
-    public LetterPage writeLetterButtonClick() {
+    public void writeLetterButtonClick() {
         inboxPage.getWriteLetterButton().click();
-        return new LetterPage();
+
     }
 
     public void deleteLetterButtonClick() {
