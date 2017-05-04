@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 public class SignInPwdPage extends BasePage {
 
+//  google is providing new visual design for the login page, so this will replace older one
+//  private static final String PSS_INPUT_FIELD = "//input[type='password']";
+//  private static final String SIGN_IN_BUTTON = "//content/span";
     private static final String PSS_INPUT_FIELD = "//input[@id='Passwd']";
     private static final String SIGN_IN_BUTTON = "//input[@id='signIn']";
 
