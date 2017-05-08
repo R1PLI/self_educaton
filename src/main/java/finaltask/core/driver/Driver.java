@@ -5,7 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static finaltask.constants.TimeConstants.*;
+import static finaltask.constants.TimeConstants.IMPLICITLY_WAIT_TIME;
+import static finaltask.constants.TimeConstants.PAGE_LOAD_TIME;
+import static finaltask.constants.TimeConstants.SET_SCRIPT_TIME;
 
 public class Driver {
 

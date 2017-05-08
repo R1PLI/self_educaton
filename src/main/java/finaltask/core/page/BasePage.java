@@ -8,12 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    private static Logger logger = LogManager.getLogger(BasePage.class);
-
-    private WebDriver driver;
+    private static final Logger logger = LogManager.getLogger(BasePage.class);
 
     protected BasePage() {
-        driver = Driver.getInstance();
+        WebDriver driver = Driver.getInstance();
         PageFactory.initElements(driver, this);
         logger.info("Initialize page elements");
     }

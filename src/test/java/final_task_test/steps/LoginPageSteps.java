@@ -8,10 +8,10 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class LoginPageSteps {
 
-    private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
+    private static final Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
-    private SignInLoginPageHelper signInLoginHelper = new SignInLoginPageHelper();
-    private SignInPwdPageHelper signInPwdPageHelper = new SignInPwdPageHelper();
+    private final SignInLoginPageHelper signInLoginHelper = new SignInLoginPageHelper();
+    private final SignInPwdPageHelper signInPwdPageHelper = new SignInPwdPageHelper();
 
     @Step("Login in inbox")
     public void loginInInbox(String email, String pwd) {

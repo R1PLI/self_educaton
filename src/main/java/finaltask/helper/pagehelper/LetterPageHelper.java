@@ -4,7 +4,7 @@ import finaltask.pages.LetterPage;
 
 public class LetterPageHelper {
 
-    private LetterPage letterPage = new LetterPage();
+    private final LetterPage letterPage = new LetterPage();
 
     public void toInputFieldWrite(String to) {
         letterPage.getToInputField().sendKeys(to);

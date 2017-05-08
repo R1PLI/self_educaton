@@ -5,7 +5,7 @@ import finaltask.pages.InboxPage;
 
 public class InboxPageHelper {
 
-    private InboxPage inboxPage = new InboxPage();
+    private final InboxPage inboxPage = new InboxPage();
 
     public void newLetterLinkClick() {
         inboxPage.getNewLetterLink().click();

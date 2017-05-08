@@ -4,7 +4,7 @@ import finaltask.pages.SignInLoginPage;
 
 public class SignInLoginPageHelper {
 
-    private SignInLoginPage signInLoginPage = new SignInLoginPage();
+    private final SignInLoginPage signInLoginPage = new SignInLoginPage();
 
     public void sendInputLogin(String email) {
         signInLoginPage.getEmailLoginField().sendKeys(email);

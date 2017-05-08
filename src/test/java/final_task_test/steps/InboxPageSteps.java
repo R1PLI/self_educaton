@@ -10,10 +10,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class InboxPageSteps {
 
-    private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
+    private static final Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
-    private InboxPage inboxPage = new InboxPage();
-    private InboxPageHelper inboxPageHelper = new InboxPageHelper();
+    private final InboxPage inboxPage = new InboxPage();
+    private final InboxPageHelper inboxPageHelper = new InboxPageHelper();
 
     @Step("Open letter page")
     public void goToLetterPage() {

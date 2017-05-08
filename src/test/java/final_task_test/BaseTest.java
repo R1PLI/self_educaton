@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeTest;
 
 public abstract class BaseTest {
 
-    private static Logger logger = LogManager.getLogger(BaseTest.class);
-    private UrlConstants urlConstants = new UrlConstants();
+    private static final Logger logger = LogManager.getLogger(BaseTest.class);
+    private final UrlConstants urlConstants = new UrlConstants();
 
     @BeforeTest
     public void setUp() {

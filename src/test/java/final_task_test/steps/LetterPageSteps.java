@@ -7,9 +7,9 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class LetterPageSteps {
 
-    private static Logger logger = LogManager.getLogger(InboxPageSteps.class);
+    private static final Logger logger = LogManager.getLogger(InboxPageSteps.class);
 
-    private LetterPageHelper letterPageHelper = new LetterPageHelper();
+    private final LetterPageHelper letterPageHelper = new LetterPageHelper();
 
     @Step("Composing a letter")
     public void composeLetter(String to, String subject, String msg) {
