@@ -1,7 +1,7 @@
 package finaltask.helper.pagehelper;
 
 import finaltask.pages.LetterPage;
-
+//TODO: DELETE THIS REDUNDANCY
 public class LetterPageHelper {
 
     private final LetterPage letterPage = new LetterPage();

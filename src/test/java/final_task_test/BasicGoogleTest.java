@@ -31,7 +31,7 @@ public class BasicGoogleTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Title("G-mail test")
     @Test(dataProvider = "G-mailMailing", dataProviderClass = MailingDataProviderClass.class)
-    public void emailSending(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) {
+    public void emailSending(String mailLogin, String mailPwd, String letterTo, String letterSubj, String letterMsg, String subjCompare) throws InterruptedException {
         loginPageSteps.loginInInbox(mailLogin, mailPwd);
         inboxPageSteps.verifyElementIsPresented();
         inboxPageSteps.deleteMessagesIfPossible();

@@ -1,7 +1,7 @@
 package finaltask.helper.pagehelper;
 
 import finaltask.pages.SignInLoginPage;
-
+//TODO: DELETE THIS REDUNDANCY
 public class SignInLoginPageHelper {
 
     private final SignInLoginPage signInLoginPage = new SignInLoginPage();

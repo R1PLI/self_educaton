@@ -2,7 +2,7 @@ package finaltask.helper.pagehelper;
 
 import finaltask.helper.GeneralHelper;
 import finaltask.pages.InboxPage;
-
+//TODO: DELETE THIS REDUNDANCY
 public class InboxPageHelper {
 
     private final InboxPage inboxPage = new InboxPage();

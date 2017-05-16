@@ -14,10 +14,12 @@ public class LoginPageSteps {
     private final SignInPwdPageHelper signInPwdPageHelper = new SignInPwdPageHelper();
 
     @Step("Login in inbox")
-    public void loginInInbox(String email, String pwd) {
+    public void loginInInbox(String email, String pwd) throws InterruptedException {
         signInLoginHelper.sendInputLogin(email);
         signInLoginHelper.emailLoginButtonClick();
         signInPwdPageHelper.sendInputLogin(pwd);
+        //TODO: DELETE THIS SHIT
+        Thread.sleep(1000);
         signInPwdPageHelper.emailLoginButtonClick();
         logger.info("Login in inbox");
     }
