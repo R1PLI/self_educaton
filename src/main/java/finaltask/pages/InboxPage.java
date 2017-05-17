@@ -1,42 +1,47 @@
 package finaltask.pages;
 
 import finaltask.core.page.BasePage;
-import lombok.Getter;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 
-import java.util.List;
+import static finaltask.core.utils.WaitCondition.clickable;
+import static finaltask.core.utils.WaitCondition.visible;
+import static finaltask.core.utils.WaitCondition.presented;
 
-@Getter
+
 public class InboxPage extends BasePage {
 
-    private static final String WRITE_ELEMENT_LETTER_BUTTON = "//div[@role='navigation']/preceding-sibling:: div//div[@role='button']";
-    private static final String NEW_LETTER_LINK = "(//div[@role='navigation']//a)[1]";
-    private static final String MESSAGE_SUBJECT_LIST = "//div[@role='main']/descendant::table/descendant::tr/descendant::span/b";
-    private static final String ALL_LETTER_CHECKBOX = "//span[@role='checkbox']/div";
-    private static final String DELETE_LETTER_BUTTON = "//div/div[@role='button' and @tabindex='0'][3]/div";
-    private static final String FIRST_MESSAGE = "//div[@role='main']/descendant::table/descendant::tr[1]/descendant::span/b";
+  private final By writeElementButton = By.xpath("//div[@role='navigation']/preceding-sibling:: div//div[@role='button']");
+  private final By newLetterLink = By.xpath("(//div[@role='navigation']//a)[1]");
+  private final By messageSubjectList = By.xpath("//div[@role='main']/descendant::table/descendant::tr/descendant::span/b");
+  private final By allLettersCheckbox = By.xpath("//span[@role='checkbox']/div");
+  private final By deleteLetterButton = By.xpath("//div/div[@role='button' and @tabindex='0'][3]/div");
+  private final By firstMessage = By.xpath("//div[@role='main']/descendant::table/descendant::tr[1]/descendant::span/b");
 
-    @FindBy(xpath = WRITE_ELEMENT_LETTER_BUTTON)
-    private WebElement writeLetterButton;
+  public InboxPage() {
+    super();
+  }
 
-    @FindBy(xpath = NEW_LETTER_LINK)
-    private WebElement newLetterLink;
+  public void writeNewLetterLinkClick() {
+    click(writeElementButton, visible);
+  }
 
-    @FindBy(xpath = ALL_LETTER_CHECKBOX)
-    private WebElement allLetterCheckbox;
+  public void deleteLetterButtonClick() {
+    click(deleteLetterButton, clickable);
+  }
 
-    @FindBy(xpath = DELETE_LETTER_BUTTON)
-    private WebElement deleteLetterButton;
+  public void allLettersCheckboxClick() {
+    click(allLettersCheckbox, clickable);
+  }
 
-    @FindBy(xpath = FIRST_MESSAGE)
-    private WebElement firstMessageSubject;
+  public boolean isSubjectListEmpty() {
+    return getListOfElements(messageSubjectList).isEmpty();
+  }
 
-    @FindAll({@FindBy(xpath = MESSAGE_SUBJECT_LIST)})
-    private List<WebElement> messageSubjectText;
+  public String getSubjectText() {
+    return getText(firstMessage, presented);
+  }
 
-    public InboxPage() {
-        super();
-    }
+  public void newLetterLink() {
+    click(newLetterLink, clickable);
+  }
 }

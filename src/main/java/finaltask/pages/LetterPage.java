@@ -1,31 +1,36 @@
 package finaltask.pages;
 
 import finaltask.core.page.BasePage;
-import lombok.Getter;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 
-@Getter
+import static finaltask.core.utils.WaitCondition.clickable;
+import static finaltask.core.utils.WaitCondition.visible;
+
+
 public class LetterPage extends BasePage {
 
-    private static final String TO_INPUT_FIELD = "//textarea[@name='to']";
-    private static final String SUBJECT_INPUT_FIELD = "//input[@name='subjectbox']";
-    private static final String MESSAGE_TEXT_AREA = "//input[@name='subjectbox']/ancestor::form/following-sibling::table//div[@role='textbox']";
-    private static final String SEND_MESSAGE_BUTTON = "(//div[@role='dialog']//div[@role='button' and @tabindex='1'])[1]";
+  private final By toInputField = By.xpath("//textarea[@name='to']");
+  private final By subjectInputField = By.xpath("//input[@name='subjectbox']");
+  private final By messageAreaText = By.xpath("//input[@name='subjectbox']/ancestor::form/following-sibling::table//div[@role='textbox']");
+  private final By sendMessageButton = By.xpath("(//div[@role='dialog']//div[@role='button' and @tabindex='1'])[1]");
 
-    @FindBy(xpath = TO_INPUT_FIELD)
-    private WebElement toInputField;
+  public LetterPage() {
+    super();
+  }
 
-    @FindBy(xpath = SUBJECT_INPUT_FIELD)
-    private WebElement subjectInputField;
+  public void toInputFieldWrite(final String to) {
+    type(toInputField, visible, to);
+  }
 
-    @FindBy(xpath = MESSAGE_TEXT_AREA)
-    private WebElement messageTextArea;
+  public void subjectInputFieldWrite(final String subject) {
+    type(subjectInputField, visible, subject);
+  }
 
-    @FindBy(xpath = SEND_MESSAGE_BUTTON)
-    private WebElement sendMessageButton;
+  public void messageInputFieldWrite(final String message) {
+    type(messageAreaText, visible, message);
+  }
 
-    public LetterPage() {
-        super();
-    }
+  public void sendMessageButtonClick() {
+    click(sendMessageButton, clickable);
+  }
 }

@@ -1,4 +1,4 @@
-package final_task_test;
+package finaltask;
 
 import finaltask.core.property.UrlConstants;
 import finaltask.core.driver.Driver;
@@ -10,14 +10,14 @@ import org.testng.annotations.BeforeTest;
 
 public abstract class BaseTest {
 
-    private static final Logger logger = LogManager.getLogger(BaseTest.class);
+    private static final Logger LOGGER = LogManager.getLogger(BaseTest.class);
     private final UrlConstants urlConstants = new UrlConstants();
 
     @BeforeTest
     public void setUp() {
         Driver.getInstance().get(urlConstants.getGmailMainPage());
-        logger.info("Creating driver's instance");
-        logger.info("Set url for driver");
+        LOGGER.info("Creating driver's instance");
+        LOGGER.info("Set url for driver");
     }
 
     @AfterTest
@@ -26,7 +26,7 @@ public abstract class BaseTest {
             Driver.clearCookie();
             Driver.driverKill();
         } catch (Exception e) {
-            logger.error("Driver is dead");
+            LOGGER.error("Driver is dead");
         }
     }
 }

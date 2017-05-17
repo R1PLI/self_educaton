@@ -3,7 +3,7 @@
 <suite name="Mailing">
     <test name="Final Task, Sending email">
         <classes>
-            <class name="final_task_test.BasicGoogleTest"/>
+            <class name="finaltask.BasicGoogleTest"/>
         </classes>
     </test>
 </suite>
