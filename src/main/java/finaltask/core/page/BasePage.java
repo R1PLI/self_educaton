@@ -15,9 +15,10 @@ public abstract class BasePage {
 
   private static final Logger LOGGER = LogManager.getLogger(BasePage.class);
   private final WebDriverWait wait;
+  protected WebDriver driver;
 
   protected BasePage() {
-    WebDriver driver = Driver.getInstance();
+    driver = Driver.getInstance();
     this.wait = new WebDriverWait(driver, 2);
     LOGGER.info("Initialize waiter");
   }
@@ -34,15 +35,17 @@ public abstract class BasePage {
     waitFor(locator, condition).sendKeys(text);
   }
 
-  protected String getText(final By locator,  final WaitCondition condition) {
+  protected String getText(final By locator, final WaitCondition condition) {
     return waitFor(locator, condition).getText();
   }
 
   protected List<WebElement> getListOfElements(final By locator) {
     List<WebElement> elements;
 
-    elements = Driver.getInstance().findElements(locator);
+    elements = driver.findElements(locator);
 
     return elements;
   }
+
+  protected abstract void pageRefresh();
 }

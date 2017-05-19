@@ -44,4 +44,10 @@ public class InboxPage extends BasePage {
   public void newLetterLink() {
     click(newLetterLink, clickable);
   }
+
+  @Override
+  public void pageRefresh() {
+    driver.navigate().refresh();
+    driver.switchTo().alert().accept();
+  }
 }

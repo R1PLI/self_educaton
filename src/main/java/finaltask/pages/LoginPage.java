@@ -9,6 +9,7 @@ import static finaltask.core.utils.WaitCondition.visible;
 
 public class LoginPage extends BasePage {
 
+  //TODO: find better solution for xpaths
   private final By emailLoginField = By.xpath("//*[@id=\"identifierId\"]");
   private final By loginNextButton = By.xpath("//*[@id=\"passwordNext\"]/content");
   private final By pwdInputField = By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input");
@@ -16,6 +17,11 @@ public class LoginPage extends BasePage {
 
   public LoginPage() {
     super();
+  }
+
+  @Override
+  protected void pageRefresh() {
+
   }
 
   public void loginButtonClick() {

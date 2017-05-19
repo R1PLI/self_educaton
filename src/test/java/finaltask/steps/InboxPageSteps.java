@@ -1,5 +1,6 @@
 package finaltask.steps;
 
+import finaltask.core.driver.Driver;
 import finaltask.pages.InboxPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,9 +20,9 @@ public class InboxPageSteps {
     LOGGER.info("Switch to letter page");
   }
 
-  @Step("Click 'New letters' for inbox updating")
-  public void newLetterLinkClick() {
-    inboxPage.newLetterLink();
+  @Step("Refresh inbox page to update mailbox")
+  public void refreshPageForNewLetters() {
+    inboxPage.pageRefresh();
     LOGGER.info("Update inbox for new letters");
   }
 

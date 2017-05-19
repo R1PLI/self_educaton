@@ -1,10 +1,12 @@
 package finaltask;
 
+import finaltask.core.driver.Driver;
 import finaltask.steps.InboxPageSteps;
 import finaltask.steps.LetterPageSteps;
 import finaltask.steps.LoginPageSteps;
 import finaltask.data.MailingDataProviderClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
@@ -14,7 +16,7 @@ import ru.yandex.qatools.allure.annotations.Title;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 @Features("Email feature")
-@Stories({"Letter sending"})
+@Stories( {"Letter sending"})
 public class BasicGoogleTest extends BaseTest {
 
   private LoginPageSteps loginPageSteps;
@@ -33,11 +35,10 @@ public class BasicGoogleTest extends BaseTest {
   @Test(dataProvider = "G-mailMailing", dataProviderClass = MailingDataProviderClass.class)
   public void emailSending(final String mailLogin, final String mailPwd, final String letterTo, final String letterSubj, final String letterMsg, final String subjCompare) {
     loginPageSteps.loginInInbox(mailLogin, mailPwd);
-    inboxPageSteps.deleteMessagesIfPossible();
     inboxPageSteps.goToLetterPage();
     letterPageSteps.composeLetter(letterTo, letterSubj, letterMsg);
     letterPageSteps.sendLetter();
-    inboxPageSteps.newLetterLinkClick();
+    inboxPageSteps.refreshPageForNewLetters();
     inboxPageSteps.verifyLetterSubject(subjCompare);
   }
 

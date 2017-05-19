@@ -22,6 +22,11 @@ public class LetterPage extends BasePage {
     type(toInputField, visible, to);
   }
 
+  @Override
+  protected void pageRefresh() {
+
+  }
+
   public void subjectInputFieldWrite(final String subject) {
     type(subjectInputField, visible, subject);
   }
