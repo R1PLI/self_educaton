@@ -15,10 +15,9 @@ public abstract class BasePage {
 
   private static final Logger LOGGER = LogManager.getLogger(BasePage.class);
   private final WebDriverWait wait;
-  protected WebDriver driver;
+  protected WebDriver driver = Driver.getInstance();
 
   protected BasePage() {
-    driver = Driver.getInstance();
     this.wait = new WebDriverWait(driver, 2);
     LOGGER.info("Initialize waiter");
   }

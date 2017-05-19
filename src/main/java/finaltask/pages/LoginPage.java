@@ -15,10 +15,6 @@ public class LoginPage extends BasePage {
   private final By pwdInputField = By.xpath("//*[@id=\"password\"]/div[1]/div/div[1]/input");
   private final By signInButton = By.xpath("//*[@id=\"identifierNext\"]/content/span");
 
-  public LoginPage() {
-    super();
-  }
-
   @Override
   protected void pageRefresh() {
 

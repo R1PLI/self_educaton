@@ -32,7 +32,7 @@ public class BasicGoogleTest extends BaseTest {
   @Severity(SeverityLevel.CRITICAL)
   @Title("G-mail test")
   @Test(dataProvider = "G-mailMailing", dataProviderClass = MailingDataProviderClass.class)
-  public void emailSending(final String mailLogin, final String mailPwd, final String letterTo, final String letterSubj, final String letterMsg, final String subjCompare) {
+  public void emailSending(final String mailLogin, final String mailPwd, final String letterTo, final String letterSubj, final String letterMsg, final String subjCompare) throws InterruptedException {
     loginPageSteps.loginInInbox(mailLogin, mailPwd);
     inboxPageSteps.goToLetterPage();
     letterPageSteps.composeLetter(letterTo, letterSubj, letterMsg);

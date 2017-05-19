@@ -2,10 +2,10 @@ package finaltask.pages;
 
 import finaltask.core.page.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
-import static finaltask.core.utils.WaitCondition.clickable;
-import static finaltask.core.utils.WaitCondition.visible;
-import static finaltask.core.utils.WaitCondition.presented;
+import static finaltask.core.utils.WaitCondition.*;
+import static finaltask.core.utils.Waiter.waitWithNoCondition;
 
 
 public class InboxPage extends BasePage {
@@ -15,10 +15,6 @@ public class InboxPage extends BasePage {
   private final By allLettersCheckbox = By.xpath("//span[@role='checkbox']/div");
   private final By deleteLetterButton = By.xpath("//div/div[@role='button' and @tabindex='0'][3]/div");
   private final By firstMessage = By.xpath("//div[@role='main']/descendant::table/descendant::tr[1]/descendant::span/b");
-
-  public InboxPage() {
-    super();
-  }
 
   public void writeNewLetterLinkClick() {
     click(writeElementButton, visible);
@@ -42,7 +38,7 @@ public class InboxPage extends BasePage {
 
   @Override
   public void pageRefresh() {
+    waitWithNoCondition(1000);
     driver.navigate().refresh();
-    driver.switchTo().alert().accept();
   }
 }
