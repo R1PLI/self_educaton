@@ -11,7 +11,6 @@ import static finaltask.core.utils.WaitCondition.presented;
 public class InboxPage extends BasePage {
 
   private final By writeElementButton = By.xpath("//div[@role='navigation']/preceding-sibling:: div//div[@role='button']");
-  private final By newLetterLink = By.xpath("(//div[@role='navigation']//a)[1]");
   private final By messageSubjectList = By.xpath("//div[@role='main']/descendant::table/descendant::tr/descendant::span/b");
   private final By allLettersCheckbox = By.xpath("//span[@role='checkbox']/div");
   private final By deleteLetterButton = By.xpath("//div/div[@role='button' and @tabindex='0'][3]/div");
@@ -39,10 +38,6 @@ public class InboxPage extends BasePage {
 
   public String getSubjectText() {
     return getText(firstMessage, presented);
-  }
-
-  public void newLetterLink() {
-    click(newLetterLink, clickable);
   }
 
   @Override

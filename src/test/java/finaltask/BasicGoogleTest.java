@@ -5,10 +5,9 @@ import finaltask.steps.InboxPageSteps;
 import finaltask.steps.LetterPageSteps;
 import finaltask.steps.LoginPageSteps;
 import finaltask.data.MailingDataProviderClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Severity;
 import ru.yandex.qatools.allure.annotations.Stories;
@@ -42,7 +41,7 @@ public class BasicGoogleTest extends BaseTest {
     inboxPageSteps.verifyLetterSubject(subjCompare);
   }
 
-  @AfterTest
+  @AfterMethod
   public void inboxCleaning() {
     inboxPageSteps.deleteMessagesIfPossible();
   }
