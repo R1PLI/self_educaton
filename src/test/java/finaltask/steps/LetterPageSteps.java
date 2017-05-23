@@ -7,7 +7,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class LetterPageSteps {
 
-  private static final Logger LOGGER = LogManager.getLogger(InboxPageSteps.class);
+  private static final Logger LOGGER = LogManager.getLogger(LetterPageSteps.class);
 
   private final LetterPage letterPage = new LetterPage();
 
