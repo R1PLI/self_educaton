@@ -1,13 +1,11 @@
 package finaltask.steps;
 
 import finaltask.pages.LetterPage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import ru.yandex.qatools.allure.annotations.Step;
 
+@Log4j2
 public class LetterPageSteps {
-
-  private static final Logger LOGGER = LogManager.getLogger(LetterPageSteps.class);
 
   private final LetterPage letterPage = new LetterPage();
 
@@ -16,12 +14,12 @@ public class LetterPageSteps {
     letterPage.toInputFieldWrite(to);
     letterPage.subjectInputFieldWrite(subject);
     letterPage.messageInputFieldWrite(msg);
-    LOGGER.info("Composing a letter");
+    log.info("Composing a letter");
   }
 
   @Step("Sending a letter")
   public void sendLetter() {
     letterPage.sendMessageButtonClick();
-    LOGGER.info("Letter is send");
+    log.info("Letter is send");
   }
 }

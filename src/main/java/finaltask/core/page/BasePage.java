@@ -2,8 +2,7 @@ package finaltask.core.page;
 
 import finaltask.core.driver.Driver;
 import finaltask.core.utils.WaitCondition;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,15 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
+@Log4j2
 public abstract class BasePage {
 
-  private static final Logger LOGGER = LogManager.getLogger(BasePage.class);
   private final WebDriverWait wait;
   protected WebDriver driver = Driver.getInstance();
 
   protected BasePage() {
     this.wait = new WebDriverWait(driver, 2);
-    LOGGER.info("Initialize waiter");
+    log.info("Initialize waiter");
   }
 
   private WebElement waitFor(final By locator, final WaitCondition condition) {

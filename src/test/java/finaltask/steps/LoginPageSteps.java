@@ -1,13 +1,11 @@
 package finaltask.steps;
 
 import finaltask.pages.LoginPage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import ru.yandex.qatools.allure.annotations.Step;
 
+@Log4j2
 public class LoginPageSteps {
-
-  private static final Logger LOGGER = LogManager.getLogger(LoginPageSteps.class);
 
   private final LoginPage loginPage = new LoginPage();
 
@@ -17,6 +15,6 @@ public class LoginPageSteps {
     loginPage.loginButtonClick();
     loginPage.inputCredentialsInPasswordField(pwd);
     loginPage.pwdButtonClick();
-    LOGGER.info("Login in inbox");
+    log.info("Login in inbox");
   }
 }
