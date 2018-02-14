@@ -1,10 +1,12 @@
 package finaltask.steps;
 
 import finaltask.core.driver.Driver;
+import finaltask.core.utils.Waiter;
 import finaltask.pages.InboxPage;
 import lombok.extern.log4j.Log4j2;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import static finaltask.core.utils.Waiter.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Log4j2
@@ -36,6 +38,7 @@ public class InboxPageSteps {
     if (!inboxPage.isSubjectListEmpty()) {
       inboxPage.allLettersCheckboxClick();
       inboxPage.deleteLetterButtonClick();
+      waitWithNoCondition(1000);
       log.info("Delete all letters in inbox");
     }
   }
