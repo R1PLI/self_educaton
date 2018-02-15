@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Log4j2
@@ -38,11 +39,7 @@ public abstract class BasePage {
   }
 
   protected List<WebElement> getListOfElements(final By locator) {
-    List<WebElement> elements;
-
-    elements = driver.findElements(locator);
-
-    return elements;
+    return new ArrayList<>(driver.findElements(locator));
   }
 
   protected abstract void pageRefresh();
