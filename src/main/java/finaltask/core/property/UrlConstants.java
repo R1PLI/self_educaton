@@ -12,6 +12,9 @@ public class UrlConstants {
     @Property("gmail.main.page")
     private String gmailMainPage;
 
+    @Property("ukrnet.main.page")
+    private String ukrnetMainPage;
+
     public UrlConstants() {
         PropertyLoader.populate(this);
     }

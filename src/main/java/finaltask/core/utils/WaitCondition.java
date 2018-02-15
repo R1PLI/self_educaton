@@ -17,6 +17,5 @@ public enum WaitCondition {
   clickable(ExpectedConditions::elementToBeClickable),
   presented(ExpectedConditions::presenceOfElementLocated);
 
-
   private final Function<By, ExpectedCondition<WebElement>> type;
 }

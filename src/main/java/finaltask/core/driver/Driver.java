@@ -7,9 +7,7 @@ public final class Driver {
 
   private static WebDriver webDriver;
 
-  private Driver() {
-
-  }
+  private Driver() { }
 
   public static WebDriver getInstance() {
     if (webDriver == null) {
